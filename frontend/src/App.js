@@ -1,10 +1,24 @@
-import React from 'react'
+import { Container } from 'react-bootstrap'
+import { Outlet } from "react-router-dom";
+import Header from "./components/Header";
+import Footer from './components/Footer';
+// import Contact from './screens/Contact';
+
 
 const App = () => {
   return (
-    <h1>Welcome To ShopJz</h1>
-  )
-}
+    <>
+      <Header />
+      {/* <Contact /> */}
+      <main className="py-3">
+        <Container>
+          <Outlet />
+        </Container>
+      </main>
+      <Footer />
+    </>
+  );
+};
 
 export default App
 
