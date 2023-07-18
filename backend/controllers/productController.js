@@ -24,4 +24,20 @@ const getProductsById = asyncHandler(async (req, res) => {
   }
 });
 
-export {getProducts, getProductsById};
+
+//=== Slider ===//
+
+// get top rated products
+//@route Get/api/products/top
+//@access public
+const getTopProducts = asyncHandler(async (req, res) => {
+  const products = await Product.find({}).sort({rating: -1}).limit(3);
+  res.status(200).json(products);
+});
+
+
+export {
+getProducts, 
+getProductsById,  
+getTopProducts,};
+

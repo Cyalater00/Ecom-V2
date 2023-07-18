@@ -238,6 +238,7 @@ h1,
 h1,
 .h1 {
   font-size: calc(1.375rem + 1.5vw);
+  color: black;
 }
 @media (min-width: 1200px) {
   h1,
@@ -4140,6 +4141,7 @@ fieldset:disabled .btn {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
+  color: black;
 }
 
 .navbar-nav-scroll {

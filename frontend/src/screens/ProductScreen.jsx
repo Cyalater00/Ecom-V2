@@ -5,7 +5,6 @@ import {Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap'
 import Rating from "../components/Rating";
 import axios from 'axios'
 
-
 const ProductScreen = () => {
   //=== Fetching description page from Bankend ===//
   const[product, setProduct] = useState({});
