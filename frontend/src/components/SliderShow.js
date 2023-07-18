@@ -1,35 +1,52 @@
 import React, { useState, useEffect } from "react";
 import "./SliderShow.css";
-// import Brentford from '../assets/Brentford.jpeg'
-// import newcastle from "../assets/newcastle.jpeg";
 
-
-const SliderShow = ({ slides }) => {
+const Slideshow = () => {
+  // State variable to track the current slide index
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  // Array of slide data
+  const slides = [
+    {
+      image: "/images/vinijr.jpeg",
+      title: "Get Jersey Savvy",
+      description: "Discover the latest trends and jersey styles.",
+    },
+    {
+      image: "/images/Saka.jpeg",
+      title: "Shop the Best Deals",
+      description: "Your go-to spot for jersey greatness",
+    },
+    {
+      image: "/images/mbappe.jpeg",
+      title: "Get Inspired with Our Collections",
+      description: "Find the perfect jersey for any game, team, or fan",
+    },
+  ];
+
   useEffect(() => {
+    // Automatic slide transition every 5 seconds
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) =>
         prevSlide === slides.length - 1 ? 0 : prevSlide + 1
       );
     }, 5000);
 
-    return () => {
-      clearInterval(interval);
-    };
-  }, [slides]);
+    return () => clearInterval(interval);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
-    <div className="slider-show">
+    <div className="slideshow">
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`slide ${index === currentSlide ? "active" : ""}`}
+          className={`slide ${index === currentSlide ? "active" : ""}`} //add the active class for the current slide
+          style={{ backgroundImage: `url(${slide.image})` }} //this would just target the background image of the slides
         >
-          <img src={slide} alt={slide.alt} />
           <div className="slide-content">
-            <h1>{slide.title}</h1>
-            <p>{slide.text}</p>
+            <h2>{slide.title}</h2>
+            <p>{slide.description}</p>
           </div>
         </div>
       ))}
@@ -37,4 +54,6 @@ const SliderShow = ({ slides }) => {
   );
 };
 
-export default SliderShow;
+//render the slide title and render slide description.
+
+export default Slideshow;

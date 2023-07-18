@@ -7,25 +7,26 @@ import SliderShow from "./components/SliderShow";
 
 const slides = [
   {
-    image: "napoliaway.jpeg",
+    image: "/images/napoliaway.jpeg",
     alt: "Image 1",
     title: "Welcome to Our Website",
     text: "Discover amazing products and services.",
   },
   {
-    image: "newcastle.jpeg",
+    image: "/images/newcastle.jpeg",
     alt: "Image 2",
     title: "Explore Endless Possibilities",
     text: "Find what you need and more.",
   },
   {
-    image: "Brentford.jpeg",
+    image: "/images/Brentford.jpeg",
     alt: "Image 2",
     title: "Explore Endless Possibilities",
     text: "Find what you need and more.",
   },
   // Add more slides as needed
 ];
+
 
 const App = () => {
   return (
